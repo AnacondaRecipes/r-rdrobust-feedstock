@@ -9,14 +9,12 @@ package:
 
 source:
   url:
+    - https://cran.r-project.org/src/contrib/rdrobust_2.2.tar.gz
     - {{ cran_mirror }}/src/contrib/rdrobust_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/rdrobust/rdrobust_{{ version }}.tar.gz
   sha256: 82c80f8e9a2226abb9564b7b45cd16daba0dc70463ea406bc9208134da4333dd
 
 build:
-  missing_dso_whitelist:
-    - '*/libcrypto-1_1-x64.*'
-    - '*/libssl-1_1-x64.*'
   merge_build_host: True  # [win]
   # If this is a new build for the same version, increment the build number.
   number: 0
