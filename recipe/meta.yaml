@@ -30,12 +30,12 @@ requirements:
     - {{ posix }}zip               # [win]
 
   host:
-    - r-base {{ rbase }}
+    - r-base
     - r-mass
     - r-ggplot2
 
   run:
-    - r-base {{ rbase }}
+    - r-base
     - r-mass
     - r-ggplot2
 
