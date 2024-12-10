@@ -9,9 +9,9 @@ package:
 
 source:
   url:
-    - https://cran.r-project.org/src/contrib/rdrobust_2.2.tar.gz
-#    - {{ cran_mirror }}/src/contrib/rdrobust_{{ version }}.tar.gz
-#    - {{ cran_mirror }}/src/contrib/Archive/rdrobust/rdrobust_{{ version }}.tar.gz
+#    - https://cran.r-project.org/src/contrib/rdrobust_2.2.tar.gz
+    - {{ cran_mirror }}/src/contrib/rdrobust_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/rdrobust/rdrobust_{{ version }}.tar.gz
   sha256: 82c80f8e9a2226abb9564b7b45cd16daba0dc70463ea406bc9208134da4333dd
 
 build:
@@ -19,16 +19,16 @@ build:
   # If this is a new build for the same version, increment the build number.
   number: 0
   # no skip
-  missing_dso_whitelist:
-    - '*/libubsan.so.0'
-    - '*/libstdc++.so.6.0.24'
-    - '*/libasan.so.4'
-    - '*/libasan.so.4.0.0'
-    - '*/libstdc++.so'
-    - '*/libubsan.so.0.0.0'
-    - '*/libubsan.so'
-    - '*/libasan.so'
-    - '*/libstdc++.so.6'
+#  missing_dso_whitelist:
+#    - '*/libubsan.so.0'
+#    - '*/libstdc++.so.6.0.24'
+#    - '*/libasan.so.4'
+#    - '*/libasan.so.4.0.0'
+#    - '*/libstdc++.so'
+#    - '*/libubsan.so.0.0.0'
+#    - '*/libubsan.so'
+#    - '*/libasan.so'
+#    - '*/libstdc++.so.6'
 
 
   # This is required to make R link correctly on Linux.
@@ -50,11 +50,11 @@ requirements:
     - r-mass
     - r-ggplot2
 
-#test:
-#  commands:
-#    # You can put additional test commands to be run here.
-#    - $R -e "library('r-rdrobust')"           # [not win]
-#    - "\"%R%\" -e \"library('r-rdrobust')\""  # [win]
+test:
+  commands:
+    # You can put additional test commands to be run here.
+    - $R -e "library('r-rdrobust')"           # [not win]
+    - "\"%R%\" -e \"library('r-rdrobust')\""  # [win]
 
 
 #test:
