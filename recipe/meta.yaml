@@ -41,12 +41,12 @@ requirements:
     - {{ posix }}zip               # [win]
 
   host:
-    - r-base
+    - r-base {{ rbase }}
     - r-mass
     - r-ggplot2
 
   run:
-    - r-base
+    - r-base {{ rbase }}
     - r-mass
     - r-ggplot2
 
@@ -59,7 +59,7 @@ requirements:
 
 test:
   requires:
-    - r-base       # Ensure R is available
+    - r-base {{ rbase }}      # Ensure R is available
     - r-rdrobust   # The package being tested
   commands:
     - R -e "library(rdrobust); print('rdrobust successfully loaded')"
