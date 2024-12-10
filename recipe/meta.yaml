@@ -9,8 +9,8 @@ package:
 
 source:
   url:
-#    - https://cran.r-project.org/src/contrib/rdrobust_2.2.tar.gz
-    - {{ cran_mirror }}/src/contrib/rdrobust_{{ version }}.tar.gz
+    - https://cran.r-project.org/src/contrib/rdrobust_2.2.tar.gz
+#    - {{ cran_mirror }}/src/contrib/rdrobust_{{ version }}.tar.gz
 #    - {{ cran_mirror }}/src/contrib/Archive/rdrobust/rdrobust_{{ version }}.tar.gz
   sha256: 82c80f8e9a2226abb9564b7b45cd16daba0dc70463ea406bc9208134da4333dd
 
