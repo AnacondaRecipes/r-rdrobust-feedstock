@@ -53,8 +53,8 @@ requirements:
 test:
   commands:
     # You can put additional test commands to be run here.
-    - $R -e "library('rdrobust')"           # [not win]
-    - "\"%R%\" -e \"library('rdrobust')\""  # [win]
+    - $R -e "library('r-rdrobust')"           # [not win]
+    - "\"%R%\" -e \"library('r-rdrobust')\""  # [win]
 
   # You can also put a file called run_test.py, run_test.sh, or run_test.bat
   # in the recipe that will be run at test time.
