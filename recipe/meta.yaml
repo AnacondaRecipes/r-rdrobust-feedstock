@@ -50,11 +50,21 @@ requirements:
     - r-mass
     - r-ggplot2
 
+#test:
+#  commands:
+#    # You can put additional test commands to be run here.
+#    - $R -e "library('r-rdrobust')"           # [not win]
+#    - "\"%R%\" -e \"library('r-rdrobust')\""  # [win]
+
+
 test:
+  requires:
+    - r-base       # Ensure R is available
+    - r-rdrobust   # The package being tested
   commands:
-    # You can put additional test commands to be run here.
-    - $R -e "library('r-rdrobust')"           # [not win]
-    - "\"%R%\" -e \"library('r-rdrobust')\""  # [win]
+    - R -e "library(rdrobust); print('rdrobust successfully loaded')"
+    - R -e "result <- rdrobust(rnorm(100), rnorm(100)); print(result)"
+
 
   # You can also put a file called run_test.py, run_test.sh, or run_test.bat
   # in the recipe that will be run at test time.
