@@ -9,8 +9,9 @@ package:
 
 source:
   url:
-    - {{ cran_mirror }}/src/contrib/rdrobust_{{ version }}.tar.gz
-    - {{ cran_mirror }}/src/contrib/Archive/rdrobust/rdrobust_{{ version }}.tar.gz
+    - https://cran.r-project.org/src/contrib/rdrobust_2.2.tar.gz
+#    - {{ cran_mirror }}/src/contrib/rdrobust_{{ version }}.tar.gz
+#    - {{ cran_mirror }}/src/contrib/Archive/rdrobust/rdrobust_{{ version }}.tar.gz
   sha256: 82c80f8e9a2226abb9564b7b45cd16daba0dc70463ea406bc9208134da4333dd
 
 build:
@@ -18,6 +19,7 @@ build:
   # If this is a new build for the same version, increment the build number.
   number: 0
   # no skip
+
 
   # This is required to make R link correctly on Linux.
   rpaths:
@@ -43,6 +45,16 @@ test:
     # You can put additional test commands to be run here.
     - $R -e "library('rdrobust')"           # [not win]
     - "\"%R%\" -e \"library('rdrobust')\""  # [win]
+
+
+#test:
+#  requires:
+#    - r-base {{ rbase }}      # Ensure R is available
+#    - r-rdrobust   # The package being tested
+#  commands:
+#    - R -e "library(rdrobust); print('rdrobust successfully loaded')"
+#    - R -e "result <- rdrobust(rnorm(100), rnorm(100)); print(result)"
+
 
   # You can also put a file called run_test.py, run_test.sh, or run_test.bat
   # in the recipe that will be run at test time.
